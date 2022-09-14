@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/Siddiq Documents/Android App Dev/BookHub App/app/src/main/res/layout/activity_main.xml" value="0.2765625" />
         <entry key="..\:/Siddiq Documents/Android App Dev/BookHub App/app/src/main/res/layout/drawer_header.xml" value="0.28958333333333336" />
+        <entry key="..\:/Siddiq Documents/Android App Dev/BookHub App/app/src/main/res/layout/fragment_about_app.xml" value="0.290625" />
+        <entry key="..\:/Siddiq Documents/Android App Dev/BookHub App/app/src/main/res/layout/fragment_dashboard.xml" value="0.290625" />
+        <entry key="..\:/Siddiq Documents/Android App Dev/BookHub App/app/src/main/res/layout/fragment_favourites.xml" value="0.290625" />
+        <entry key="..\:/Siddiq Documents/Android App Dev/BookHub App/app/src/main/res/layout/fragment_profile.xml" value="0.290625" />
         <entry key="..\:/Siddiq Documents/Android App Dev/BookHub App/app/src/main/res/menu/menu_drawer.xml" value="0.290625" />
       </map>
     </option>
