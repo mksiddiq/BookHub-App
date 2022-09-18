@@ -1,16 +1,20 @@
-package com.siddiq.bookhub
+package com.siddiq.bookhub.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.siddiq.bookhub.*
+import com.siddiq.bookhub.fragments.AboutAppFragment
+import com.siddiq.bookhub.fragments.DashboardFragment
+import com.siddiq.bookhub.fragments.FavouritesFragment
+import com.siddiq.bookhub.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var drawerLayout: DrawerLayout

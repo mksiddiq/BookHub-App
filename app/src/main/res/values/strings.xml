@@ -14,4 +14,5 @@
     <string name="profile_fragment">Profile Fragment</string>
     <string name="about_fragment">About App Fragment</string>
     <string name="name">"Name: "</string>
+    <string name="list_item">List Item</string>
 </resources>

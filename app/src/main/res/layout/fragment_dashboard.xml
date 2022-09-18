@@ -13,4 +13,12 @@
         android:textSize="20sp"
         android:padding="10dp"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDashboardFragment"
+        android:padding="10dp"
+        android:layout_margin="5dp"/>
+
 </RelativeLayout>
