@@ -4,13 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.siddiq.bookhub.R
 import com.siddiq.bookhub.model.Book
+import com.squareup.picasso.Picasso
 import org.w3c.dom.Text
 
 class DashboardRecyclerAdapter(val context: Context, val itemList: ArrayList<Book>) :
@@ -22,6 +20,7 @@ class DashboardRecyclerAdapter(val context: Context, val itemList: ArrayList<Boo
         val txtPrice: TextView = view.findViewById(R.id.txtPrice)
         val txtRating: TextView = view.findViewById(R.id.txtRating)
         val rlContent: RelativeLayout = view.findViewById(R.id.rlContent)
+        val imgBook: ImageView = view.findViewById(R.id.imgBook)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashboardViewHolder {
@@ -34,8 +33,9 @@ class DashboardRecyclerAdapter(val context: Context, val itemList: ArrayList<Boo
         val book = itemList[position]
         holder.txtBookName.text = book.bookName
         holder.txtAuthor.text = book.bookAuthor
-        holder.txtPrice.text = book.bookCost
+        holder.txtPrice.text = book.bookPrice
         holder.txtRating.text = book.bookRating
+        Picasso.get().load(book.bookImage).error(R.drawable.book).into(holder.imgBook)
 
         holder.rlContent.setOnClickListener {
             Toast.makeText(context, "Clicked on ${holder.txtBookName.text}", Toast.LENGTH_SHORT)
