@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlBookImg"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/grey">
+
+        <ImageView
+            android:id="@+id/imgBookFav"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/book_two"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlBookImg">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtBookNameFav"
+                android:padding="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Book Name"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/txtAuthorNameFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Book Name"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="2dp"/>
+
+            <TextView
+                android:id="@+id/txtPriceFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Rs 499"
+                android:textColor="#4caf50"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="2dp"/>
+
+            <TextView
+                android:id="@+id/txtBookRatingFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawablePadding="5dp"
+                android:text="4.5"
+                android:textColor="#fbc02d"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="2dp"
+                app:drawableLeftCompat="@drawable/ic_star" />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
