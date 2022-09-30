@@ -6,10 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
@@ -27,6 +25,9 @@ import com.siddiq.bookhub.adapter.DashboardRecyclerAdapter
 import com.siddiq.bookhub.model.Book
 import com.siddiq.bookhub.util.ConnectionManager
 import org.json.JSONException
+import java.util.*
+import kotlin.Comparator
+import kotlin.collections.HashMap
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -42,12 +43,21 @@ class DashboardFragment : Fragment() {
 
     val bookInfoList = arrayListOf<Book>()
 
+    var ratingComparator = Comparator<Book>{ book1, book2 ->
+        if(book1.bookRating.compareTo(book2.bookRating, true) == 0){
+            book1.bookName.compareTo(book2.bookName, true)
+        } else{
+            book1.bookRating.compareTo(book2.bookRating, true)
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        setHasOptionsMenu(true)
 
         recyclerDashboard = view.findViewById(R.id.recyclerDashboard)
 //        btnCheckInternet = view.findViewById(R.id.btnCheckInternet)
@@ -144,7 +154,9 @@ class DashboardFragment : Fragment() {
 
                 }, Response.ErrorListener {
                     //here we will handle the errors
-                    Toast.makeText(activity as Context, "Volley error occurred!", Toast.LENGTH_SHORT).show()
+                    if(activity!=null){
+                        Toast.makeText(activity as Context, "Volley error occurred!", Toast.LENGTH_SHORT).show()
+                    }
                 }) {
                     override fun getHeaders(): MutableMap<String, String> {
                         val headers = HashMap<String, String>()
@@ -172,6 +184,21 @@ class DashboardFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_dashboard, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if(id == R.id.actionSort){
+            Collections.sort(bookInfoList, ratingComparator)
+            bookInfoList.reverse()
+        }
+        recyclerAdapter.notifyDataSetChanged()
+
+        return super.onOptionsItemSelected(item)
     }
 
 }
