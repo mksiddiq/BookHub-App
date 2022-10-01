@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutAppFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/txtAboutFragment"
+        android:id="@+id/txtAboutAppHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/about_fragment"
-        android:textSize="20sp"
-        android:padding="10dp" />
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:text="ABOUT APP"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/imgBookAboutApp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/txtAboutAppHeading"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:src="@mipmap/book_app_icon" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgBookAboutApp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/txtAboutAppDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:padding="13dp"
+            android:text="@string/about_app_desc"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

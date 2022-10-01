@@ -1,6 +1,7 @@
 package com.siddiq.bookhub.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.siddiq.bookhub.R
+import com.siddiq.bookhub.activity.DescriptionActivity
 import com.siddiq.bookhub.database.BookEntity
 import com.squareup.picasso.Picasso
 
@@ -32,6 +34,12 @@ class FavouritesRecyclerAdapter(val context: Context, val bookList: List<BookEnt
         holder.txtBookPrice.text=book.bookPrice
         holder.txtBookRating.text=book.bookRating
         Picasso.get().load(book.bookImage).error(R.drawable.book_two).into(holder.imgBookImage)
+
+        holder.llContent.setOnClickListener {
+            val intent = Intent(context, DescriptionActivity::class.java)
+            intent.putExtra("book_id", book.book_id.toString())
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

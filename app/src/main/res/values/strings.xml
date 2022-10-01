@@ -16,4 +16,5 @@
     <string name="name">"Name: "</string>
     <string name="list_item">List Item</string>
     <string name="check_internet">Check Internet</string>
+    <string name="about_app_desc">Welcome to BookHub! This is your personal library where you can fetch the most famous books from the internet and save it in your favourites too! The profile fragment has the details about the developer who made this app. Hope you will enjoy the experience!</string>
 </resources>
